@@ -1,3 +1,9 @@
+*.vs
+*.user
+bin/
+bin-int/
+Debug/
+
 # Prerequisites
 *.d
 
