@@ -1,8 +1,6 @@
 #pragma once
-
+#include "gepch.h"
 #include "Event.h"
-
-#include <sstream>
 
 namespace GE
 {
@@ -12,7 +10,7 @@ namespace GE
 		public:
 			inline int getKeyCode() const { return keyCode; }
 
-			EVENT_CLASS_CATEGORY(Keyboard | Input)
+			EVENT_CLASS_CATEGORY(EventCatKeyboard | EventCatInput)
 		
 		protected:
 			KeyEvent(int keyCode)

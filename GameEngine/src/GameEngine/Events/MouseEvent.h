@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace GE
 {
 	class GE_API MouseMovedEvent : public Event
@@ -23,7 +21,7 @@ namespace GE
 			}
 
 			EVENT_CLASS_TYPE(MouseMoved);
-			EVENT_CLASS_CATEGORY(Mouse | Input);
+			EVENT_CLASS_CATEGORY(EventCatMouse | EventCatInput);
 
 		private:
 			float mouseX, mouseY;
@@ -48,7 +46,7 @@ namespace GE
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled);
-		EVENT_CLASS_CATEGORY(Mouse | Input);
+		EVENT_CLASS_CATEGORY(EventCatMouse | EventCatInput);
 
 	private:
 		float offsetX, offsetY;
@@ -61,7 +59,7 @@ namespace GE
 		public:
 			inline int getMouseButton() const { return button; }
 
-			EVENT_CLASS_CATEGORY(Mouse | Input);
+			EVENT_CLASS_CATEGORY(EventCatMouse | EventCatInput);
 		protected:
 			MouseButtonEvent(int button)
 				: button(button) {}

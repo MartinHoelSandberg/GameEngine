@@ -2,9 +2,6 @@
 
 #include "GameEngine/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace GE
 {
 	/*
@@ -24,12 +21,12 @@ namespace GE
 
 	enum EventCategory
 	{
-		None		= 0,
-		Application = BIT(0),
-		Input		= BIT(1),
-		Keyboard	= BIT(2),
-		Mouse		= BIT(3),
-		MouseButton = BIT(4)
+		None				= 0,
+		EventCatApplication	= BIT(0),
+		EventCatInput		= BIT(1),
+		EventCatKeyboard	= BIT(2),
+		EventCatMouse		= BIT(3),
+		EventCatMouseButton	= BIT(4)
 	};
 
 #define EVENT_CLASS_TYPE(type) static EventType getStaticType() { return EventType::##type; } \

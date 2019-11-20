@@ -1,3 +1,4 @@
+#include "gepch.h"
 #include "Application.h"
 
 #include "GameEngine/Events/MouseEvent.h"
@@ -8,6 +9,7 @@ namespace GE
 
 	Application::Application()
 	{
+		window = std::unique_ptr<Window>(Window::create());
 	}
 
 	Application::~Application()
@@ -17,10 +19,9 @@ namespace GE
 
 	void Application::run()
 	{
-		MouseMovedEvent e(100, 200);
-		GE_TRACE(e.getName());
-		while (true)
+		while (isRunning)
 		{
+			window->onUpdate();
 		}
 	}
 }

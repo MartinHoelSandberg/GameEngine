@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include "GameEngine/Window.h"
 
 namespace GE
 {
@@ -12,6 +13,9 @@ namespace GE
 
 			void run();
 
+		private:
+			std::unique_ptr<Window> window;
+			bool isRunning = true;
 	};
 
 	// Should be defined in the client

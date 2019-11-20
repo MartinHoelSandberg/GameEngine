@@ -1,8 +1,6 @@
 #pragma once
-
+#include "gepch.h"
 #include "Event.h"
-
-#include <sstream>
 
 namespace GE
 {
@@ -24,7 +22,7 @@ namespace GE
 			}
 
 			EVENT_CLASS_TYPE(WindowResize);
-			EVENT_CLASS_CATEGORY(Application);
+			EVENT_CLASS_CATEGORY(EventCatApplication);
 
 		private:
 			float width, height;
@@ -36,7 +34,7 @@ namespace GE
 		WindowCloseEvent() {}
 
 		EVENT_CLASS_TYPE(WindowClose);
-		EVENT_CLASS_CATEGORY(Application);
+		EVENT_CLASS_CATEGORY(EventCatApplication);
 	};
 
 	//----------------------------------------------------//
@@ -47,7 +45,7 @@ namespace GE
 		AppTickEvent() {}
 
 		EVENT_CLASS_TYPE(AppTick);
-		EVENT_CLASS_CATEGORY(Application);
+		EVENT_CLASS_CATEGORY(EventCatApplication);
 	};
 
 	class GE_API AppRenderEvent : public Event
@@ -56,7 +54,7 @@ namespace GE
 		AppRenderEvent() {}
 
 		EVENT_CLASS_TYPE(AppRender);
-		EVENT_CLASS_CATEGORY(Application);
+		EVENT_CLASS_CATEGORY(EventCatApplication);
 	};
 
 	class GE_API AppUpdateEvent : public Event
@@ -65,7 +63,7 @@ namespace GE
 		AppUpdateEvent() {}
 
 		EVENT_CLASS_TYPE(AppUpdate);
-		EVENT_CLASS_CATEGORY(Application);
+		EVENT_CLASS_CATEGORY(EventCatApplication);
 	};
 
 }
