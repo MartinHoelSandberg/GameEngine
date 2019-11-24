@@ -1,7 +1,9 @@
 #pragma once
 
-#include "Core.h"
+#include "GameEngine/Core.h"
 #include "GameEngine/Window.h"
+#include "GameEngine/Events/ApplicationEvent.h"
+#include "GameEngine/LayerStack.h"
 
 namespace GE
 {
@@ -13,8 +15,15 @@ namespace GE
 
 			void run();
 
+			void onEvent(Event&);
+			bool onWindowClose(WindowCloseEvent&);
+
+			void pushLayer(Layer*);
+			void pushOverlay(Layer*);
+
 		private:
 			std::unique_ptr<Window> window;
+			LayerStack layerStack;
 			bool isRunning = true;
 	};
 

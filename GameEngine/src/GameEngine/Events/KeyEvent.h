@@ -30,7 +30,7 @@ namespace GE
 			std::string toString() const override
 			{
 				std::stringstream ss;
-				ss << "KeyPressedEvent: " << keyCode << " (" << repeatCount << " repeats)";
+				ss << "KeyPressedEvent: " << keyCode << " (" << (char)keyCode << ") " << " (" << repeatCount << " repeats)";
 				return ss.str();
 			}
 
@@ -49,7 +49,7 @@ namespace GE
 			std::string toString() const override
 			{
 				std::stringstream ss;
-				ss << "KeyReleasedEvent: " << keyCode;
+				ss << "KeyReleasedEvent: " << keyCode << " (" << (char)keyCode << ")";
 				return ss.str();
 			}
 

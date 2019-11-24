@@ -50,14 +50,13 @@ namespace GE
 				return getCategoryFlags() & category;
 			}
 
-		protected:
 			bool handled = false;
 	};
 
 	class EventDispatcher
 	{
 		template<typename T>
-		using eventFn = std::function<bool(T)>; // Todo: Tutorial says "&T", should check if this gets any problems
+		using eventFn = std::function<bool(T&)>;
 		
 		public:
 			EventDispatcher(Event& event)
@@ -66,7 +65,7 @@ namespace GE
 			template<typename T>
 			bool dispatch(eventFn<T> func)
 			{
-				if (event.getEventType() == T::getStaticEvent())
+				if (event.getEventType() == T::getStaticType())
 				{
 					event.handled = func(*(T*)&event);
 					return true;

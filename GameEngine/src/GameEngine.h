@@ -4,6 +4,7 @@
 
 
 #include "GameEngine/Log.h"
+#include "GameEngine/Layer.h"
 #include "GameEngine/Application.h"
 
 //----Entry Point-----------------

@@ -9,36 +9,36 @@ namespace GE
 	// Interface for Windows desktop systems
 	class GE_API WindowsWindow : public Window
 	{
-	public:
-		WindowsWindow(const WindowProps& props);
-		virtual ~WindowsWindow();
+		public:
+			WindowsWindow(const WindowProps& props);
+			virtual ~WindowsWindow();
 
-		virtual void onUpdate() override;
+			virtual void onUpdate() override;
 
-		virtual unsigned int getWidth() const override { return data.width; }
-		virtual unsigned int getHeight() const override { return data.height; }
+			virtual unsigned int getWidth() const override  { return data.width;  }
+			virtual unsigned int getHeight() const override { return data.height; }
 
-		// Window attributes
-		virtual void setEventCallback(const EventCallbackFn& callback) override;
-		virtual void setVSync(bool enabled) override;
-		virtual bool isVSync() const override;
+			// Window attributes
+			virtual void setEventCallback(const EventCallbackFn& callback) override;
+			virtual void setVSync(bool enabled) override;
+			virtual bool isVSync() const override;
 
-	private:
-		virtual void init(const WindowProps& props);
-		virtual void shutdown();
+		private:
+			virtual void init(const WindowProps& props);
+			virtual void shutdown();
 
-		GLFWwindow* window;
+			GLFWwindow* window;
 
-		struct WindowData 
-		{
-			std::string title;
-			unsigned int width;
-			unsigned int height;
+			struct WindowData 
+			{
+				std::string title;
+				unsigned int width;
+				unsigned int height;
 
-			bool vsync;
-			EventCallbackFn callback;
-		};
+				bool vsync;
+				EventCallbackFn callback;
+			};
 
-		WindowData data;
+			WindowData data;
 	};
 }
