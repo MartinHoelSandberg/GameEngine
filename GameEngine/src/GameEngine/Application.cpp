@@ -4,6 +4,8 @@
 #include "GameEngine/Events/MouseEvent.h"
 #include "GameEngine/Log.h"
 
+#include <glad/glad.h>
+
 namespace GE
 {
 	#define BIND_EVENT_FN(func) std::bind(&Application::func, this, std::placeholders::_1)

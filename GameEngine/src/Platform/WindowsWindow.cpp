@@ -7,6 +7,8 @@
 #include "GameEngine/Events/KeyEvent.h"
 #include "GameEngine/Events/ApplicationEvent.h"
 
+#include "glad/glad.h"
+
 namespace GE
 {
 	static bool glfwInitialized = false;
@@ -75,6 +77,10 @@ namespace GE
 
 		window = glfwCreateWindow((int)data.width, (int)data.height, data.title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(window);
+		
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		GE_ASSERT(status, "Failed to initialize Glad!");
+
 		glfwSetWindowUserPointer(window, &data);
 		setVSync(true/*vsync*/);
 
